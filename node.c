@@ -7,7 +7,7 @@
 p_letter_node createnode(char c)
 {
     p_letter_node new;
-    new=(p_letter_node)malloc(27*sizeof(t_letter_node));
+    new=(p_letter_node)malloc(sizeof(t_letter_node));
     new->letter = c;
     return new;
     //initialisation d'un p_letter_node new
@@ -24,7 +24,7 @@ void add_node_r(p_letter_node root_node,char*formebase)
 {
     if(formebase[0]=='\0')
     {
-        printf("C'est fait");
+        printf("C'est fait ");
         return;
     }
     else

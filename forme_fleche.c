@@ -50,7 +50,7 @@ char* getFormeBase(char*ligne,char*formeBase)
     char*pch=strtok(ligne,": \t");
     pch=strtok(NULL," \t");
     strcpy(formeBase,pch);
-    printf("Forme Base:%s\t",formeBase);
+    printf("Forme Base:%s\t\n",formeBase);
     return formeBase;
 }
 char* getFormeFlechie(char*ligne,char*formeFlechie)
@@ -157,11 +157,14 @@ char* extraire_formebase(char* t1,char*t2)
     }
     return t2;
 }
-char*copieligne(char*ligne1,char*ligne2)
+/*char*copieligne(char*ligne1,char*ligne2)
 {
     for(int i=0;i<strlen(ligne1);i++)
     {
-        ligne1[i]=ligne2[i];
+        ligne2[i]=ligne1[i];
     }
     return ligne2;
-}
+}*/
+
+
+//Ici auraient dû être présent les fonctions permettant de conjuguer les verbes et d'accorder les noms adj;
