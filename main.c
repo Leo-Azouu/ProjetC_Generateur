@@ -5,10 +5,16 @@
 
 int main()
 {
-    //FILE *fp;
+    FILE *fp;
     p_nom_tree tree;
+    p_ver_tree t;
+    p_adv_tree tre;
+    p_adj_tree tr;
+    t=set_the_vertree();
     tree=set_the_nomtree();
-    char ligne[100]="stabilimetre   stabilimetre    Ver:Mas+SG.";
+    tre=set_the_advtree();
+    tr=set_the_adjtree();
+    char ligne[100]="stabilimetre   stabilimetre    Nom:Mas+SG.";
     char ligne2[100]={};
     char flechie[20]={};
     char gender[20]={};
@@ -16,31 +22,31 @@ int main()
     char type[20]={};
     char base[20]={};
     char base2[20]={};
-
-
     //getWords(ligne,base,flechie,type,gender,number);
-    addnom(tree,base,base2,type,ligne);
+
+
     //getFormeFlechie(ligne,flechie);
     //getFormeBase(ligne,base);
     //getType(ligne,type);
     //getGender(ligne,gender);
     //getnumber(ligne,number);
 
-    //fp=fopen("/Users/tomheising/CLionProjects/untitled3/Dictionnaire_test.txt","r");//changer en fonction de l'emplacement de Dictionnaire_test sur votre machine
-    //if (fp==NULL)
-    //{
-        //printf("Error fp = NULL");
-        //return 0;
-    //}
+    fp=fopen("/Users/tomheising/CLionProjects/untitled3/Dictionnaire_test.txt","r");//changer en fonction de l'emplacement de Dictionnaire_test sur votre machine
+    if (fp==NULL)
+    {
+        printf("Error fp = NULL");
+        return 0;
+    }
 
-    //else
-    //{
-        //while(fgets(ligne,100,fp)!=NULL)
-        //{
-            //getWords(ligne,flechie,base);
+    else
+    {
+        while(fgets(ligne,100,fp)!=NULL)
+        {
+            addword(tree,tr,tre,t,ligne,base,flechie,type,gender,number);
 
-        //}
-    //}
+        }
+    }
+    return 0;
 }
 
 
